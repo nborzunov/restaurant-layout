@@ -1,0 +1,831 @@
+@font-face 
+    font-family: Banny
+    src: url(../fonts/Banny-Round.otf)
+@font-face 
+    font-family: Bold-Banny
+    src: url(../fonts/Banny-BoldRound.otf)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap')
+*   
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    text-decoration: none
+// Header
+.headerBox
+    background: url('../images/header_bg.webp') no-repeat center center  fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    display: grid
+    height: auto
+    max-height: 100vh
+    .navbar
+        display: inherit
+        grid-template-columns: repeat(4, 1fr) 200px repeat(4, 1fr)
+        margin: 0 100px
+        height: 300px
+        .item
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+            list-style-type: none
+            height: 100px
+            text-align: center
+            font-family: 'Inter'
+            font-style: normal
+            font-weight: 400
+            font-size: 1em
+            line-height: 1em
+            text-transform: uppercase
+            &:hover
+                background-color: #E8C300
+            a
+                display: block
+                padding: 41px 0
+                text-decoration: none
+                color: #fff
+        .logo
+            margin-top: 20px
+            transition-delay: .1s
+            transition-timing-function: ease-in
+            -webkit-transition-duration: 2s
+            transition-duration: 2s
+            -webkit-transition-property: transform
+            transition-property: transform
+            &:hover
+                -webkit-transform: rotate(270deg)
+                transform: rotate(270deg)
+    .content
+        text-align: center
+        .label
+            color: white
+            font-family: 'Inter', sans-serif
+            font-style: normal
+            font-weight: 400
+            font-size: 1em
+            line-height: 1em
+            text-transform: uppercase
+        .header
+            text-transform: uppercase
+            color: white
+            font-family: Banny, sans-serif
+            font-size: 7em
+        .line
+            background: #E8C300
+            display: flex
+            margin: auto
+            width: 256px
+            height: 5px
+            border-radius: 20px
+        .buttons
+            margin-top: 40px
+            margin-bottom: 400px
+            .btn
+                border: none
+                width: 200px
+                height: 60px
+                border-radius: 5px
+                color: white
+                margin: 0 30px
+                font-family: Inter
+                font-weight: 700
+                text-transform: uppercase
+                vertical-align: middle
+                -webkit-transform: perspective(1px) translateZ(0)
+                transform: perspective(1px) translateZ(0)
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+                -webkit-transition-duration: 0.3s
+                transition-duration: 0.3s
+                -webkit-transition-property: transform
+                transition-property: transform
+                &:hover
+                    transform: scale(1.05)
+            .book
+                background: #E8C300
+                border: 1px solid #E8C300
+            .explore
+                background: #0000
+                border: 2px solid gray
+// About Us
+.aboutBox
+    height: auto
+    .content
+        max-width: 1200px
+        display: grid
+        grid-template-areas: 'text pic'
+        margin: 0 auto
+        .text
+            grid-area: text
+            margin: auto 0
+            max-width: 600px
+            .header
+                color: black
+                font-family: Bold-Banny, sans-serif
+                font-size: 2.5rem
+                line-height: 3rem
+                font-weight: 400
+                text-align: center
+                text-transform: uppercase
+                margin-top: 230px
+            .line
+                background: #E8C300
+                display: flex
+                margin: 15px auto
+                width: 64px
+                height: 5px
+                border-radius: 20px
+            .qoute
+                display: flex
+                margin: auto
+                margin-bottom: 20px
+                max-width: 600px
+                font-family: Inter, sans-serif
+                font-style: bold
+                font-weight: 800
+                font-size: 18px
+                line-height: 28px
+                display: flex
+                align-items: flex-end
+                text-align: center
+            .body
+                text-align: center
+                display: flex
+                margin: auto
+                max-width: 600px
+                margin-bottom: 180px
+                font-family: Open-Sans, sans-serif
+                line-height: 28px
+                max-width: 600px
+    .picture
+        grid-area: pic
+        width: auto
+        height: auto
+        margin: auto 0
+        border-radius: 5px
+        z-index: 10
+        img
+            filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+// Master Chef
+.chefBox
+    background: url('../images/masterchef_bg.webp') no-repeat center center  fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: auto
+    .content
+        max-width: 1200px
+        display: grid
+        grid-template-areas: 'label label' 'pic text'
+        color: white
+        margin: 0 auto
+        .label
+            grid-area: label
+            text-transform: uppercase
+            text-align: center
+            padding: 40px 0
+            letter-spacing: 0.5em
+            line-height: 14px
+            font-family: Inter, sans-serif
+        .picture
+            grid-area: pic
+            width: auto
+            height: auto
+            border-radius: 5px
+            img 
+                filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+        .text
+            grid-area: text
+            margin: auto 0
+            max-width: 600px
+            .header
+                font-family: Bold-Banny, sans-serif
+                font-size: 2.5rem
+                line-height: 3rem
+                font-weight: 400
+                text-align: center
+                text-transform: uppercase
+            .line
+                background: #E8C300
+                display: flex
+                margin: 15px auto
+                width: 64px
+                height: 5px
+                border-radius: 20px
+            .qoute
+                display: flex
+                margin: auto
+                margin-bottom: 20px
+                max-width: 600px
+                font-family: Inter, sans-serif
+                font-style: bold
+                font-weight: 800
+                font-size: 18px
+                line-height: 28px
+                display: flex
+                align-items: flex-end
+                text-align: center
+            .body
+                color: #bfb7ab
+                text-align: center
+                display: flex
+                margin: auto
+                line-height: 28px
+                max-width: 600px
+                font-family: Open-Sans, sans-serif
+// Booking
+.bookingBox
+    height: auto
+    .content
+        max-width: 1200px
+        display: grid
+        grid-template-areas: 'book pic' 'date date'
+        color: white
+        margin: 0 auto
+        .booking
+            grid-area: book
+            .header
+                color: black
+                font-family: Bold-Banny, sans-serif
+                font-size: 2.5rem
+                line-height: 3rem
+                font-weight: 400
+                text-align: center
+                text-transform: uppercase
+                margin-top: 180px
+            .line
+                background: #E8C300
+                display: flex
+                margin: 20px auto
+                width: 64px
+                height: 5px
+                border-radius: 20px
+            .form
+                display: grid
+                grid-template-columns: 275px 275px
+                grid-gap: 10px
+                .item
+                    border: none
+                    font-family: Inter, sans-serif
+                    font-style: normal
+                    font-weight: normal
+                    font-size: 14px
+                    line-height: 19px
+                    padding-left: 20px
+                    margin: 0 10px 0 10px
+                    width: 275px
+                    height: 60px
+                    color: #33333390
+                    background-color: #E5E5E5
+                    border-radius: 5px
+                    cursor: pointer
+                    &:focus
+                        outline: none
+                        border: 2px solid #E8C300
+            .btn
+                width: 562px
+                height: 60px
+                border-radius: 5px
+                color: white
+                margin: 10px 10px 0 10px
+                font-family: Inter
+                font-weight: 700
+                text-transform: uppercase
+                vertical-align: middle
+                transition: border 0.3s, background 0.3s, color 0.3s
+                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5)
+                background: #E8C300
+                border: 2px solid #E8C300
+                &:hover
+                    border: 2px solid gray
+                    background: #E5E5E5
+                    color: black
+    .picture
+        grid-area: pic
+        margin-top: 50px
+        border-radius: 5px
+        img
+            width: auto
+            height: auto
+            filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+    .date
+        margin: 40px 0
+        grid-area: date
+        color: rgba(255, 255, 255, 0.5)
+        text-align: center
+        font-family: Open Sans, sans-serif
+        font-style: normal
+        font-weight: normal
+        font-size: 1em
+        line-height: 1em
+// Specialty
+.specialtyBox
+    background: url('../images/specialty_bg.webp') no-repeat center center  fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: auto
+    .content
+        max-width: 1200px
+        display: grid
+        grid-template-areas: 'label label' 'pic text'
+        color: white
+        margin: 0 auto
+        .label
+            grid-area: label
+            text-transform: uppercase
+            text-align: center
+            padding: 40px 0
+            letter-spacing: 0.5em
+            line-height: 14px
+            font-family: Inter, sans-serif
+        .slider
+            height: 100%
+            width: 100%
+            max-width: 1200px
+            margin-bottom: 20px
+            .slick-dots
+                list-style: none
+                display: block
+                text-align: center
+                padding: 0
+                margin: 0
+                width: 100%
+                li 
+                    position: relative 
+                    display: inline-block 
+                    height: 20px 
+                    width: 20px 
+                    margin: 0 5px 
+                    padding: 0 
+                    cursor: pointer 
+                    button 
+                        border: 0 
+                        background: transparent 
+                        display: block 
+                        height: 20px 
+                        width: 20px 
+                        outline: none 
+                        line-height: 0px 
+                        font-size: 0px 
+                        color: transparent 
+                        padding: 5px 
+                        cursor: pointer 
+                        &:hover, &:focus 
+                            outline: none 
+                            &:before 
+                                opacity: 1 
+                        &:before 
+                            position: absolute 
+                            top: 0 
+                            left: 0 
+                            content: "\2022"
+                            width: 20px 
+                            height: 20px 
+                            font-size: 64px
+                            line-height: 20px 
+                            text-align: center 
+                            color: rgba(255, 255, 255, 0.5)
+                            opacity: 0.5 
+                            -webkit-font-smoothing: antialiased 
+                            -moz-osx-font-smoothing: grayscale 
+                    &.slick-active button:before 
+                        color: rgba(255, 255, 255, 1)
+                        opacity: 0.75
+            .slider_item
+                display: grid
+                grid-template-areas: 'pic text'
+                .picture
+                    grid-area: pic
+                    width: auto
+                    height: auto
+                    border-radius: 5px
+                    img 
+                        filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+                .text
+                    grid-area: text
+                    margin: auto 0
+                    max-width: 600px
+                    .header
+                        font-family: Bold-Banny, sans-serif
+                        font-size: 2.5rem
+                        line-height: 3rem
+                        font-weight: 400
+                        text-align: center
+                        text-transform: uppercase
+                    .line
+                        background: #E8C300
+                        display: flex
+                        margin: 15px auto
+                        width: 64px
+                        height: 5px
+                        border-radius: 20px
+                    .qoute
+                        display: flex
+                        margin: auto
+                        margin-bottom: 20px
+                        max-width: 600px
+                        font-family: Inter, sans-serif
+                        font-style: bold
+                        font-weight: 800
+                        font-size: 18px
+                        line-height: 28px
+                        display: flex
+                        align-items: flex-end
+                        text-align: center
+                    .body
+                        color: #bfb7ab
+                        text-align: center
+                        display: flex
+                        margin: auto
+                        line-height: 28px
+                        max-width: 600px
+                        font-family: Open-Sans, sans-serif
+// Delicious Menu
+.menuBox
+    height: auto
+    .content
+        max-width: 1680px
+        display: grid
+        grid-template-areas: 'text' 'wrapper'
+        margin: 0 auto
+        .text
+            grid-area: text
+            margin: auto
+            max-width: 600px
+            margin-top: 120px
+            margin-bottom: 40px
+            .header
+                font-family: Bold-Banny, sans-serif
+                font-size: 2.5rem
+                line-height: 3rem
+                font-weight: 400
+                text-align: center
+                text-transform: uppercase
+            .line
+                background: #E8C300
+                display: flex
+                margin: 10px auto
+                width: 64px
+                height: 5px
+                border-radius: 20px
+            .quote
+                display: flex
+                margin: auto
+                font-family: Open Sans, sans-serif
+                font-style: normal
+                font-weight: 700
+                font-size: 1.25rem
+                line-height: 28px
+                display: flex
+                align-items: flex-end
+                text-align: center
+        .wrapper
+            grid-area: wrapper
+            max-width: 1880px
+            margin-bottom: 80px
+            .tabs
+                width: 100%
+                -webkit-transform: translateY(5px)
+                transform: translateY(5px)
+                display: grid
+                .nav
+                    margin: auto
+                    display: grid
+                    grid-template-columns: repeat(7,  120px)
+                    grid-template-rows: repeat(1, 50px)
+                    li
+                        position: relative
+                        width: 120px
+                        height: 50px
+                        transition-duration: .25s
+                        list-style: none
+                        font-family: Inter, sans-serif
+                        text-transform: uppercase
+                        font-style: normal
+                        font-weight: bold
+                        font-size: 1rem
+                        line-height: 1rem
+                        cursor: pointer
+                        color: #b2b2b2
+                        border-right: 2px solid rgba(80, 80, 80, 0.2)
+                        span
+                            position: absolute
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%, -50%)
+                        &:nth-child(7)
+                            border-right: none
+                        &:hover
+                        &.active
+                            color: black
+                            &:before
+                                transition-duration: .5s
+                                background-color: white
+                                -webkit-transform: translateY(0)
+                                transform: translateY(0)
+        .tab__content
+            margin-top: 40px
+            background-color: white
+            position: relative
+            width: 100%
+            border-radius: 5px
+            li
+                width: 100%
+                position: absolute
+                top: 0
+                left: 0
+                display: none
+                list-style: none
+                .content__wrapper
+                    color: white
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    grid-template-rows: 
+                    grid-gap: 40px
+                    .product
+                        color: #333333
+                        display: grid
+                        grid-template-areas: 'name price' 'desc price'
+                        grid-template-columns: 
+                        text-transform: uppercase
+                        font-size: 1.5rem
+                        line-height: 1.5rem
+                        font-family: Bold-Banny
+                        .name
+                            grid-area: name
+                        .description
+                            grid-area: desc
+                            color: #b2b2b2
+                            text-transform: none
+                            font-family: Inter, sans-serif 
+                            font-size: 1rem
+                            font-height: 1rem
+                        .price
+                            grid-area: price
+// Private Events
+.privateBox
+    background: url('../images/specialty_bg.webp') no-repeat center center  fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    height: auto
+    .content
+        max-width: 1200px
+        height: 100%
+        display: grid
+        grid-template-areas: 'label' 'images' 'info'
+        color: white
+        margin: 0 auto
+        .label
+            grid-area: label
+            height: 100px
+            text-transform: uppercase
+            text-align: center
+            padding: 40px 0
+            letter-spacing: 0.5em
+            line-height: 14px
+            font-family: Inter, sans-serif
+        .images
+            grid-area: images
+            margin-left: 80px
+            display: grid
+            grid-template-columns: 1fr 1fr
+            .left
+                width: 475px
+                height: 475px
+                .image
+                    width: 100%
+                    height: 100%
+                    background: url(../images/private_1.webp) no-repeat
+                    filter: drop-shadow(0px 0px 50px #000000)
+                    border-radius: 5px
+                    position: relative
+                    .text
+                        background-color: black
+                        position: absolute
+                        width: 476px
+                        height: 80px
+                        left: 42%
+                        top: 41.5%
+                        font-family: Banny
+                        font-size: 2rem
+                        line-height: 12px
+                        display: flex
+                        align-items: center
+                        text-indent: 20px
+                        text-transform: uppercase
+                        transform: rotate(90deg)
+                        border-top-right-radius: 5px
+                        border-top-left-radius: 5px
+            .right
+                width: 475px
+                height: 475px
+                .image
+                    background: url(../images/private_2.webp) no-repeat
+                    width: 100%
+                    height: 100%
+                    filter: drop-shadow(0px 0px 50px #000000)
+                    border-radius: 5px
+                    position: relative
+                    .text 
+                        background-color: black
+                        position: absolute
+                        width: 476px
+                        height: 80px
+                        right: 42%
+                        top: 41.5%
+                        font-family: Banny
+                        font-size: 2rem
+                        line-height: 12px
+                        display: flex
+                        align-items: center
+                        text-indent: 20px
+                        text-transform: uppercase
+                        transform: rotate(-90deg)
+                        border-top-right-radius: 5px
+                        border-top-left-radius: 5px
+        .info
+            margin-top: 80px
+            margin-bottom: 40px
+            grid-area: info
+            color: rgba(255, 255, 255, 0.5)
+            text-align: center
+            font-family: Open Sans, sans-serif
+            font-style: normal
+            font-weight: normal
+            font-size: 1em
+            line-height: 1em
+// Carousel
+.photoBox
+    .content
+        position: relative
+        .carousel
+            img
+                width: 25% 
+        .arrows
+            .arrow
+                opacity: 0.8
+                border: none
+                background-color: rgba(80, 80, 80, 0.5)
+                color: rgba(0, 0, 0, 0.8)
+                width: 4rem
+                height: 100%
+                position: absolute
+                -ms-transform: translateY(-50%)
+                -webkit-transform: translateY(-50%)
+                transform: translateY(-50%)
+                display: flex
+                text-align: center
+                align-items: center
+                font-size: 4rem
+                outline: none
+                transition: all 0.1s ease
+                i 
+                    position: absolute
+                    left: 50%
+                    transform: translatex(-50%)
+                &:hover
+                    opacity: 0.99
+            .prev
+                left: 0
+                top: 50%
+            .next
+                right: 0
+                top: 50%
+// Contact
+.contactBox
+    .content
+        max-width: 1300px
+        display: grid
+        grid-template-areas: 'text text' 'form form' 'info btn'
+        grid-gap: 10px
+        margin: 0 auto
+        padding-bottom: 80px
+        .text
+            grid-area: text
+            margin: auto
+            max-width: 600px
+            margin-top: 120px
+            margin-bottom: 40px
+            .header
+                font-family: Bold-Banny, sans-serif
+                font-size: 2.5rem
+                line-height: 3rem
+                font-weight: 400
+                text-align: center
+                text-transform: uppercase
+            .line
+                background: #E8C300
+                display: flex
+                margin: 10px auto
+                width: 64px
+                height: 5px
+                border-radius: 20px
+            .quote
+                display: flex
+                margin: auto
+                font-family: Open Sans, sans-serif
+                font-style: normal
+                font-weight: 700
+                font-size: 1.25rem
+                line-height: 28px
+                display: flex
+                align-items: flex-end
+                text-align: center
+        .form
+            display: grid
+            grid-area: form
+            max-width: 1280px
+            grid-template-areas:  'name email phone' 'message message message'
+            grid-gap: 10px
+            .item
+                box-sizing: border-box
+                padding-left: 20px
+                border: none
+                font-family: Inter, sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 14px
+                line-height: 19px             
+                height: 60px
+                color: #333333ff
+                background-color: #E5E5E5
+                border-radius: 5px
+                cursor: pointer
+                &:focus
+                    outline: none
+                    border: 2px solid #E8C300
+            .name
+                grid-area: name
+                max-width: 420px
+            .email
+                grid-area: email
+                max-width: 420px
+            .phone
+                grid-area: phone
+                max-width: 420px
+            .message
+                max-width: 1280px
+                height: 120px
+                resize: none
+                padding-top: 10px
+                grid-area: message
+        .info
+            grid-area: info
+            width: 630px
+            height: 60px
+            color: rgb(153,153,153)
+            text-align: center
+            font-family: Open Sans, sans-serif
+            font-style: normal
+            font-weight: normal
+            font-size: 0.75em
+            line-height: 0.75em
+            display: flex
+            align-items: center
+            i   
+                color: #E8C300
+        .btn
+            margin-right: 10px
+            box-sizing: border-box
+            grid-area: btn
+            width: 630px
+            height: 60px
+            border-radius: 5px
+            color: white
+            font-family: Inter
+            font-weight: 700
+            text-transform: uppercase
+            vertical-align: middle
+            transition: border 0.3s, background 0.3s, color 0.3s
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5)
+            background: #E8C300
+            border: 2px solid #E8C300
+            &:hover
+                border: 2px solid gray
+                background: #E5E5E5
+                color: black
+// Map
+.mapBox
+    .map
+        width: 100%
+        height: 600px
+.footer
+    width: 100%
+    height: 100px
+    background: rgba(0, 0, 0, 0.9)
+    display: flex
+    .text
+        margin: auto
+        font-family: Open Sans, sans-serif
+        font-style: normal
+        font-weight: normal
+        font-size: 1rem
+        line-height: 1rem
+        color: rgba(255, 255, 255, 0.3)
+        .white
+            font-family: Inter, sans-serif
+            color: rgba(255, 255, 255, 0.5)
+
