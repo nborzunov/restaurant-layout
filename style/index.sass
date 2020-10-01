@@ -331,7 +331,7 @@ $headerLH: 3rem
                     height: 60px
                     border-radius: 5px
                     color: white
-                    font-family: Inter
+                    font-family: Inter, sans-serif
                     font-weight: 700
                     text-transform: uppercase
                     vertical-align: middle
@@ -509,14 +509,13 @@ $headerLH: 3rem
             grid-area: text
             margin: auto
             max-width: $mediaMaxWidth/2
-            margin-top: 120px
-            margin-bottom: 40px
+            margin-bottom: 5vh
             .header
                 color: $headerDarkColor
                 font-size: $headerFS
                 line-height: $headerLH
                 font-family: Bold-Banny, sans-serif
-                margin-top: 1vh
+                margin-top: 10vh
                 font-weight: 400
                 text-align: center
                 text-transform: uppercase
@@ -549,11 +548,15 @@ $headerLH: 3rem
                 .nav
                     margin: auto
                     display: grid
-                    grid-template-columns: repeat(7,  120px)
+                    grid-template-columns: repeat(7,  1fr)
                     grid-template-rows: repeat(1, 50px)
+                    @media screen and (max-width: 840px)
+                        grid-template-columns: repeat(3, 120px)
+                        grid-template-rows: repeat(3, 50px)
                     li
+                        margin-bottom: 10px
                         position: relative
-                        max-width: 120px
+                        width: 120px
                         max-height: 50px
                         transition-duration: .25s
                         list-style: none
@@ -573,6 +576,7 @@ $headerLH: 3rem
                             transform: translate(-50%, -50%)
                         &:nth-child(7)
                             border-right: none
+                            grid-area: 3/2/3/2
                         &:hover
                         &.active
                             color: black
@@ -581,17 +585,27 @@ $headerLH: 3rem
                                 background-color: white
                                 -webkit-transform: translateY(0)
                                 transform: translateY(0)
+                        @media screen and (max-width: 840px)
+                            &:nth-child(1n)
+                                border: none
+                            &:nth-child(2)
+                                border-left: 2px solid rgba(80, 80, 80, 0.2)
+                                border-right: 2px solid rgba(80, 80, 80, 0.2)
+                            &:nth-child(5)
+                                border-left: 2px solid rgba(80, 80, 80, 0.2)
+                                border-right: 2px solid rgba(80, 80, 80, 0.2)
+                            &:nth-child(7)
+                                border-left: 2px solid rgba(80, 80, 80, 0.2)
+                                border-right: 2px solid rgba(80, 80, 80, 0.2)
+                            
         .tab__content
             margin-top: 40px
-            background-color: white
             position: relative
             width: auto
             // height: auto
             border-radius: 5px
             li
                 position: absolute
-                // top: 0
-                // left: 0
                 display: none
                 list-style: none
                 .content__wrapper
@@ -600,7 +614,6 @@ $headerLH: 3rem
                     grid-template-columns: repeat(3, minmax(100px, 1fr))
                     grid-gap: 40px
                     padding: 0 20px
-                    
                     @media screen and (max-width: $mediaMidWidth)
                         grid-template-columns: repeat(2, minmax(100px, 1fr))
                     @media screen and (max-width: 840px)

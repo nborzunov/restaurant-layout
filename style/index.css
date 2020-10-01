@@ -456,7 +456,7 @@
   height: 60px;
   border-radius: 5px;
   color: white;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   vertical-align: middle;
@@ -723,8 +723,7 @@
   grid-area: text;
   margin: auto;
   max-width: 630px;
-  margin-top: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 5vh;
 }
 
 .menuBox .content .text .header {
@@ -732,7 +731,7 @@
   font-size: 2.5rem;
   line-height: 3rem;
   font-family: Bold-Banny, sans-serif;
-  margin-top: 1vh;
+  margin-top: 10vh;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -785,15 +784,25 @@
   margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (120px)[7];
-      grid-template-columns: repeat(7, 120px);
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
   -ms-grid-rows: (50px)[1];
       grid-template-rows: repeat(1, 50px);
 }
 
+@media screen and (max-width: 840px) {
+  .menuBox .content .wrapper .tabs .nav {
+    -ms-grid-columns: (120px)[3];
+        grid-template-columns: repeat(3, 120px);
+    -ms-grid-rows: (50px)[3];
+        grid-template-rows: repeat(3, 50px);
+  }
+}
+
 .menuBox .content .wrapper .tabs .nav li {
+  margin-bottom: 10px;
   position: relative;
-  max-width: 120px;
+  width: 120px;
   max-height: 50px;
   -webkit-transition-duration: .25s;
           transition-duration: .25s;
@@ -819,6 +828,9 @@
 
 .menuBox .content .wrapper .tabs .nav li:nth-child(7) {
   border-right: none;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: 3/2/3/2;
 }
 
 .menuBox .content .wrapper .tabs .nav li.active {
@@ -833,9 +845,26 @@
   transform: translateY(0);
 }
 
+@media screen and (max-width: 840px) {
+  .menuBox .content .wrapper .tabs .nav li:nth-child(1n) {
+    border: none;
+  }
+  .menuBox .content .wrapper .tabs .nav li:nth-child(2) {
+    border-left: 2px solid rgba(80, 80, 80, 0.2);
+    border-right: 2px solid rgba(80, 80, 80, 0.2);
+  }
+  .menuBox .content .wrapper .tabs .nav li:nth-child(5) {
+    border-left: 2px solid rgba(80, 80, 80, 0.2);
+    border-right: 2px solid rgba(80, 80, 80, 0.2);
+  }
+  .menuBox .content .wrapper .tabs .nav li:nth-child(7) {
+    border-left: 2px solid rgba(80, 80, 80, 0.2);
+    border-right: 2px solid rgba(80, 80, 80, 0.2);
+  }
+}
+
 .menuBox .content .tab__content {
   margin-top: 40px;
-  background-color: white;
   position: relative;
   width: auto;
   border-radius: 5px;
