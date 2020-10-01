@@ -15,7 +15,7 @@
 
 <body>
     <!-- Header -->
-    <div class='headerBox'>
+    <!-- <div class='headerBox'> 
         <nav class='navbar'>
             <li class='item'><a href="">Home</a></li>
             <li class='item'><a href="">About</a></li>
@@ -48,14 +48,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- About Us -->
     <div class='aboutBox'>
         <div class='content'>
             <div class='text'>
                 <div class="header">About Us</div>
                 <div class="line"></div>
-                <div class='qoute'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus,
+                <div class='quote'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus,
                     molestie est a, tempor magna.
                 </div>
                 <div class='body'>Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non
@@ -78,7 +78,7 @@
             <div class='text'>
                 <div class="header">Master Chef</div>
                 <div class="line"></div>
-                <div class="qoute">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
+                <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
                     maximus, molestie est a, tempor magna.</div>
                 <div class="body">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi
                     non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin
@@ -94,28 +94,31 @@
                 <div class="header">Book a Table</div>
                 <div class="line"></div>
                 <form class='form'>
-                    <input type='name' placeholder='Name' class='item'></input>
-                    <input type='email' placeholder='Email' class='item'></input>
-                    <input type='phone' placeholder='Phone' class='item'></input>
-                    <select type='People' placeholder='People' class='item'>
-                        <option>People</option>
-                        <option>1-15</option>
-                        <option>16-40</option>
-                        <option>41-80</option>
-                        <option>80+</option>
-                    </select>
-                    <input type='Date' placeholder='date' class='item'></input>
-                    <select type='Time' placeholder='Time' class='item'>
-                        <option>Time</option>
-                        <option>12:00 - 14:00</option>
-                        <option>14:00 - 16:00</option>
-                        <option>16:00 - 18:00</option>
-                        <option>18:00 - 20:00</option>
-                        <option>20:00 - 22:00</option>
-                        <option>22:00 - 24:00</option>
-                    </select>
+                    <div class="inputs">
+                        <input type='name' placeholder='Name' class='item'></input>
+                        <input type='email' placeholder='Email' class='item'></input>
+                        <input type='phone' placeholder='Phone' class='item'></input>
+                        <select type='People' placeholder='People' class='item'>
+                            <option>People</option>
+                            <option>1-15</option>
+                            <option>16-40</option>
+                            <option>41-80</option>
+                            <option>80+</option>
+                        </select>
+                        <input type='Date' placeholder='date' class='item'></input>
+                        <select type='Time' placeholder='Time' class='item'>
+                            <option>Time</option>
+                            <option>12:00 - 14:00</option>
+                            <option>14:00 - 16:00</option>
+                            <option>16:00 - 18:00</option>
+                            <option>18:00 - 20:00</option>
+                            <option>20:00 - 22:00</option>
+                            <option>22:00 - 24:00</option>
+                        </select>
+                    </div>
+                    <button class='btn'>Book now</button>
                 </form>
-                <button class='btn'>Book now</button>
+                
             </div>
             <div class='picture'>
                 <img src='./images/book_pic.webp'>
@@ -135,7 +138,7 @@
                     <div class='text'>
                         <div class="header">chocolate pancakes</div>
                         <div class="line"></div>
-                        <div class="qoute">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
+                        <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
                             maximus, molestie est a, tempor magna.</div>
                         <div class="body">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi
                             non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin
@@ -150,7 +153,7 @@
                     <div class='text'>
                         <div class="header">hocolate pancakes</div>
                         <div class="line"></div>
-                        <div class="qoute">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
+                        <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
                             maximus, molestie est a, tempor magna.</div>
                         <div class="body">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi
                             non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin
@@ -165,7 +168,7 @@
                     <div class='text'>
                         <div class="header">hocolate pancakes</div>
                         <div class="line"></div>
-                        <div class="qoute">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
+                        <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit
                             maximus, molestie est a, tempor magna.</div>
                         <div class="body">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi
                             non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin
@@ -1049,6 +1052,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type='text/javascript' src='./js/navbar.js'></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type='text/javascript' src='./js/slider.js'></script>
     <script type='text/javascript' src='./js/tab.js'></script>

@@ -4,34 +4,60 @@
 @font-face 
     font-family: Bold-Banny
     src: url(../fonts/Banny-BoldRound.otf)
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap')
-*   
-    padding: 0
-    margin: 0
-    box-sizing: border-box
-    text-decoration: none
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400 600&display=swap')
+
+// Breakpoints
+$mediaMaxWidth: 1260px
+$mediaMidWidth: 960px
+$mediaMinWidth: 480px
+
+// Colors
+$lineColor: rgba(232, 195, 0, 1)
+
+$headerDarkColor: rgba(0, 0, 0, 1)
+$quoteDarkColor: rgba(0, 0, 0, 0.9)
+$labelDarkColor: rgba(255, 255, 255, 0.9)
+$bodyDarkColor: rgba(255, 255, 255, 0.8)
+$infoDarkColor: rgba(33, 33, 33, 0.5)
+
+$headerLightColor: rgba(255, 255, 255, 1)
+$quoteLightColor: rgba(255, 255, 255, 0.9)
+$labelLightColor: rgba(255, 255, 255, 0.9)
+$bodyLightColor: rgba(255, 255, 255, 0.8)
+
+// Font Sizes
+$headerFS: 2.5rem
+$headerLH: 3rem
+// $qouteFS:
+// $bodyFS:
+
+// Mixins
+@mixin picture
+    @media screen and (max-width: $mediaMidWidth)
+        display: none
+@mixin block
+    @media screen and (max-width: $mediaMidWidth)
+        grid-template-areas: 'label' 'text'
 // Header
 .headerBox
-    background: url('../images/header_bg.webp') no-repeat center center  fixed
+    background: url('../images/header_bg.webp') no-repeat center center fixed
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
     display: grid
     height: auto
-    max-height: 100vh
     .navbar
         display: inherit
         grid-template-columns: repeat(4, 1fr) 200px repeat(4, 1fr)
         margin: 0 100px
         height: 300px
-
         .item
             border-bottom: 2px solid rgba(255, 255, 255, 0.2)
             list-style-type: none
             height: 100px
             text-align: center
-            font-family: 'Inter'
+            font-family: Inter, sans-serif
             font-style: normal
             font-weight: 400
             font-size: 1em
@@ -110,52 +136,53 @@
 .aboutBox
     height: auto
     .content
-        max-width: 1200px
+        max-width: $mediaMaxWidth
+        width: auto
         display: grid
         grid-template-areas: 'text pic'
-        margin: 0 auto
+        margin: auto
+        @include block
         .text
             grid-area: text
-            margin: auto 0
-            max-width: 600px
+            margin: auto
+            max-width: $mediaMaxWidth/2
             .header
-                color: black
+                color: $headerDarkColor
+                font-size: $headerFS
+                line-height: $headerLH
                 font-family: Bold-Banny, sans-serif
-                font-size: 2.5rem
-                line-height: 3rem
+                margin-top: 10vh
                 font-weight: 400
                 text-align: center
                 text-transform: uppercase
-                margin-top: 230px
             .line
-                background: #E8C300
+                background: $lineColor
                 display: flex
                 margin: 15px auto
                 width: 64px
                 height: 5px
                 border-radius: 20px
-            .qoute
-                display: flex
-                margin: auto
-                margin-bottom: 20px
-                max-width: 600px
+            .quote
+                color: $quoteDarkColor
+                max-width: $mediaMaxWidth/2
                 font-family: Inter, sans-serif
-                font-style: bold
-                font-weight: 800
-                font-size: 18px
-                line-height: 28px
+                font-weight: 600
+                font-size: 1.25rem
+                line-height: 2.25rem
                 display: flex
                 align-items: flex-end
                 text-align: center
+                margin: auto
+                
             .body
+                max-width: $mediaMaxWidth/2
+                line-height: 28px
                 text-align: center
                 display: flex
                 margin: auto
-                max-width: 600px
-                margin-bottom: 180px
+                padding: 10px 30px 0 30px
+                margin-bottom: 10vh
                 font-family: Open-Sans, sans-serif
-                line-height: 28px
-                max-width: 600px
     .picture
         grid-area: pic
         width: auto
@@ -165,6 +192,7 @@
         z-index: 10
         img
             filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+        @include picture
 // Master Chef
 .chefBox
     background: url('../images/masterchef_bg.webp') no-repeat center center  fixed
@@ -174,12 +202,14 @@
     background-size: cover
     height: auto
     .content
-        max-width: 1200px
+        max-width: $mediaMaxWidth
         display: grid
         grid-template-areas: 'label label' 'pic text'
         color: white
         margin: 0 auto
+        @include block
         .label
+            color: $labelLightColor
             grid-area: label
             text-transform: uppercase
             text-align: center
@@ -194,124 +224,139 @@
             border-radius: 5px
             img 
                 filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+            @include picture
         .text
             grid-area: text
-            margin: auto 0
-            max-width: 600px
+            margin: auto
+            max-width: $mediaMaxWidth/2
             .header
+                color: $headerLightColor
+                font-size: $headerFS
+                line-height: $headerLH
                 font-family: Bold-Banny, sans-serif
-                font-size: 2.5rem
-                line-height: 3rem
+                margin-top: 1vh
                 font-weight: 400
                 text-align: center
                 text-transform: uppercase
             .line
-                background: #E8C300
+                background: $lineColor
                 display: flex
                 margin: 15px auto
                 width: 64px
                 height: 5px
                 border-radius: 20px
-            .qoute
-                display: flex
-                margin: auto
-                margin-bottom: 20px
-                max-width: 600px
+            .quote
+                color: $quoteLightColor
+                max-width: $mediaMaxWidth/2
                 font-family: Inter, sans-serif
-                font-style: bold
-                font-weight: 800
-                font-size: 18px
-                line-height: 28px
+                font-weight: 600
+                font-size: 1.25rem
+                line-height: 2.25rem
                 display: flex
                 align-items: flex-end
                 text-align: center
+                margin: auto
+                padding: 0 5px
             .body
-                color: #bfb7ab
+                color: $bodyLightColor
+                max-width: $mediaMaxWidth/2
+                line-height: 28px
                 text-align: center
                 display: flex
                 margin: auto
-                line-height: 28px
-                max-width: 600px
+                padding: 0 30px
+                margin-bottom: 10vh
                 font-family: Open-Sans, sans-serif
 // Booking
 .bookingBox
     height: auto
     .content
-        max-width: 1200px
+        max-width: $mediaMaxWidth
+        width: auto
         display: grid
         grid-template-areas: 'book pic' 'date date'
-        color: white
         margin: 0 auto
+        @media screen and (max-width: $mediaMaxWidth)
+            grid-template-areas: 'book' 'date'
         .booking
             grid-area: book
+            margin: auto
+            max-width: $mediaMaxWidth/2
+            width: auto
             .header
-                color: black
+                color: $headerDarkColor
+                font-size: $headerFS
+                line-height: $headerLH
                 font-family: Bold-Banny, sans-serif
-                font-size: 2.5rem
-                line-height: 3rem
+                margin-top: 8vh
                 font-weight: 400
                 text-align: center
                 text-transform: uppercase
-                margin-top: 180px
             .line
-                background: #E8C300
+                background: $lineColor
                 display: flex
-                margin: 20px auto
+                margin: 15px auto
                 width: 64px
                 height: 5px
                 border-radius: 20px
             .form
                 display: grid
-                grid-template-columns: 275px 275px
+                grid-template-rows: auto
                 grid-gap: 10px
-                .item
-                    border: none
-                    font-family: Inter, sans-serif
-                    font-style: normal
-                    font-weight: normal
-                    font-size: 14px
-                    line-height: 19px
-                    padding-left: 20px
-                    margin: 0 10px 0 10px
-                    width: 275px
-                    height: 60px
-                    color: #33333390
-                    background-color: #E5E5E5
-                    border-radius: 5px
-                    cursor: pointer
-                    &:focus
-                        outline: none
-                        border: 2px solid #E8C300
-            .btn
-                width: 562px
-                height: 60px
-                border-radius: 5px
-                color: white
-                margin: 10px 10px 0 10px
-                font-family: Inter
-                font-weight: 700
-                text-transform: uppercase
-                vertical-align: middle
-                transition: border 0.3s, background 0.3s, color 0.3s
-                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5)
-                background: #E8C300
-                border: 2px solid #E8C300
-                &:hover
-                    border: 2px solid gray
-                    background: #E5E5E5
-                    color: black
-    .picture
-        grid-area: pic
-        margin-top: 50px
-        border-radius: 5px
+                margin: 0 10px
+                .inputs
+                    display: grid
+                    grid-template-columns: repeat(2, minmax(100px, 275px))
+                    grid-gap: 10px
+                    
+                    .item
+                        border: none
+                        font-family: Inter, sans-serif
+                        font-style: normal
+                        font-weight: normal
+                        font-size: 14px
+                        line-height: 19px
+                        padding-left: 20px
 
-        img
-            width: 100%
+                        width: 100%
+                        height: 60px
+                        color: #33333390
+                        background-color: #E5E5E5
+                        border-radius: 5px
+                        cursor: pointer
+                        &:focus
+                            outline: none
+                            border: 2px solid #E8C300
+                .btn
+                    height: 60px
+                    border-radius: 5px
+                    color: white
+                    font-family: Inter
+                    font-weight: 700
+                    text-transform: uppercase
+                    vertical-align: middle
+                    transition: border 0.3s, background 0.3s, color 0.3s
+                    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5)
+                    background: #E8C300
+                    border: 2px solid #E8C300
+                    &:hover
+                        border: 2px solid gray
+                        background: #E5E5E5
+                        color: black
+    .picture
+        margin-top: 50px
+        grid-area: pic
+        width: auto
+        height: auto
+        border-radius: 5px
+        img 
             filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
+        @media screen and (max-width: $mediaMaxWidth)
+            display: none
     .date
-        margin: 40px 0
+        margin: 40px 10px
         grid-area: date
-        color: rgba(255, 255, 255, 0.5)
+        color: $infoDarkColor
         text-align: center
         font-family: Open Sans, sans-serif
         font-style: normal
@@ -327,12 +372,13 @@
     background-size: cover
     height: auto
     .content
-        max-width: 1200px
+        max-width: $mediaMaxWidth
         display: grid
-        grid-template-areas: 'label label' 'pic text'
-        color: white
-        margin: 0 auto
+        width: auto
+        grid-template-areas: 'label' 'slider'
+        margin: auto
         .label
+            color: $labelLightColor
             grid-area: label
             text-transform: uppercase
             text-align: center
@@ -341,17 +387,16 @@
             line-height: 14px
             font-family: Inter, sans-serif
         .slider
-            height: 100%
-            width: 100%
-            max-width: 1200px
+            grid-area: slider
+            max-width: $mediaMaxWidth
             margin-bottom: 20px
             .slick-dots
                 list-style: none
                 display: block
                 text-align: center
                 padding: 0
-                margin: 0
-                width: 100%
+                // display: flex
+                // margin: auto
                 li 
                     position: relative 
                     display: inline-block 
@@ -396,6 +441,11 @@
             .slider_item
                 display: grid
                 grid-template-areas: 'pic text'
+                outline: none
+                max-width: $mediaMaxWidth
+                width: auto
+                @media screen and (max-width: $mediaMaxWidth)
+                    grid-template-areas: 'text'
                 .picture
                     grid-area: pic
                     width: auto
@@ -403,93 +453,99 @@
                     border-radius: 5px
                     img 
                         filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5))
-                .text
+                    @media screen and (max-width: $mediaMaxWidth)
+                        display: none
+                .text    
                     grid-area: text
-                    margin: auto 0
-                    max-width: 600px
-                    .header
-                        font-family: Bold-Banny, sans-serif
-                        font-size: 2.5rem
-                        line-height: 3rem
-                        font-weight: 400
-                        text-align: center
-                        text-transform: uppercase
-                    .line
-                        background: #E8C300
-                        display: flex
-                        margin: 15px auto
-                        width: 64px
-                        height: 5px
-                        border-radius: 20px
-                    .qoute
-                        display: flex
-                        margin: auto
-                        margin-bottom: 20px
-                        max-width: 600px
-                        font-family: Inter, sans-serif
-                        font-style: bold
-                        font-weight: 800
-                        font-size: 18px
-                        line-height: 28px
-                        display: flex
-                        align-items: flex-end
-                        text-align: center
-                    .body
-                        color: #bfb7ab
-                        text-align: center
-                        display: flex
-                        margin: auto
-                        line-height: 28px
-                        max-width: 600px
-                        font-family: Open-Sans, sans-serif
+                    margin: auto
+                    max-width: $mediaMaxWidth/2
+                .header
+                    color: $headerLightColor
+                    font-size: $headerFS
+                    line-height: $headerLH
+                    font-family: Bold-Banny, sans-serif
+                    margin-top: 1vh
+                    font-weight: 400
+                    text-align: center
+                    text-transform: uppercase
+                .line
+                    background: $lineColor
+                    display: flex
+                    margin: 15px auto
+                    width: 64px
+                    height: 5px
+                    border-radius: 20px
+                .quote
+                    color: $quoteLightColor
+                    max-width: $mediaMaxWidth/2
+                    font-family: Inter, sans-serif
+                    font-weight: 600
+                    font-size: 1.25rem
+                    line-height: 2.25rem
+                    display: flex
+                    align-items: flex-end
+                    text-align: center
+                    margin: auto
+                    padding: 0 5px
+                .body
+                    color: $bodyLightColor
+                    max-width: $mediaMaxWidth/2
+                    line-height: 28px
+                    text-align: center
+                    display: flex
+                    margin: auto
+                    padding: 0 30px
+                    margin-bottom: 10vh
+                    font-family: Open-Sans, sans-serif
 // Delicious Menu
 .menuBox
-    height: 100%
+    height: auto
     .content
-        max-width: 1680px
+        max-width: $mediaMaxWidth
         display: grid
         grid-template-areas: 'text' 'wrapper'
-        margin: 0 auto
+        margin: auto
         .text
             grid-area: text
             margin: auto
-            max-width: 600px
+            max-width: $mediaMaxWidth/2
             margin-top: 120px
             margin-bottom: 40px
             .header
+                color: $headerDarkColor
+                font-size: $headerFS
+                line-height: $headerLH
                 font-family: Bold-Banny, sans-serif
-                font-size: 2.5rem
-                line-height: 3rem
+                margin-top: 1vh
                 font-weight: 400
                 text-align: center
                 text-transform: uppercase
             .line
-                background: #E8C300
+                background: $lineColor
                 display: flex
-                margin: 10px auto
+                margin: 15px auto
                 width: 64px
                 height: 5px
                 border-radius: 20px
             .quote
-                display: flex
-                margin: auto
-                font-family: Open Sans, sans-serif
-                font-style: normal
-                font-weight: 700
+                color: $quoteDarkColor
+                max-width: $mediaMaxWidth/2
+                font-family: Inter, sans-serif
+                font-weight: 600
                 font-size: 1.25rem
-                line-height: 28px
+                line-height: 2.25rem
                 display: flex
                 align-items: flex-end
                 text-align: center
+                margin: auto
+                padding: 0 5px
         .wrapper
             grid-area: wrapper
-            max-width: 1880px
+            max-width: $mediaMaxWidth
             margin-bottom: 80px
             .tabs
-                width: 100%
-                -webkit-transform: translateY(5px)
-                transform: translateY(5px)
-                display: grid
+                display: flex
+                margin: 
                 .nav
                     margin: auto
                     display: grid
@@ -497,8 +553,8 @@
                     grid-template-rows: repeat(1, 50px)
                     li
                         position: relative
-                        width: 120px
-                        height: 50px
+                        max-width: 120px
+                        max-height: 50px
                         transition-duration: .25s
                         list-style: none
                         font-family: Inter, sans-serif
@@ -529,21 +585,26 @@
             margin-top: 40px
             background-color: white
             position: relative
-            width: 100%
+            width: auto
+            // height: auto
             border-radius: 5px
             li
-                width: 100%
                 position: absolute
-                top: 0
-                left: 0
+                // top: 0
+                // left: 0
                 display: none
                 list-style: none
                 .content__wrapper
                     color: white
                     display: grid
-                    grid-template-columns: repeat(3, 1fr)
-                    grid-template-rows: 
+                    grid-template-columns: repeat(3, minmax(100px, 1fr))
                     grid-gap: 40px
+                    padding: 0 20px
+                    
+                    @media screen and (max-width: $mediaMidWidth)
+                        grid-template-columns: repeat(2, minmax(100px, 1fr))
+                    @media screen and (max-width: 840px)
+                        grid-template-columns: minmax(100px, 1fr)
                     .product
                         color: #333333
                         display: grid
@@ -555,6 +616,7 @@
                         font-family: Bold-Banny
                         .name
                             grid-area: name
+                            padding-right: 10px
                         .description
                             grid-area: desc
                             color: #b2b2b2
@@ -573,7 +635,7 @@
     background-size: cover
     height: auto
     .content
-        max-width: 1200px
+        max-width: $mediaMaxWidth
         height: 100%
         display: grid
         grid-template-areas: 'label' 'images' 'info'
@@ -698,10 +760,10 @@
 // Contact
 .contactBox
     .content
-        max-width: 1300px
+        max-width: $mediaMaxWidth
         display: grid
         grid-template-areas: 'text text' 'form form' 'info btn'
-        grid-gap: 10px
+
         margin: 0 auto
         padding-bottom: 80px
         .text
@@ -725,20 +787,20 @@
                 height: 5px
                 border-radius: 20px
             .quote
-                display: flex
-                margin: auto
-                font-family: Open Sans, sans-serif
-                font-style: normal
-                font-weight: 700
+                color: $quoteDarkColor
+                max-width: $mediaMaxWidth/2
+                font-family: Inter, sans-serif
+                font-weight: 600
                 font-size: 1.25rem
-                line-height: 28px
+                line-height: 2.25rem
                 display: flex
                 align-items: flex-end
                 text-align: center
+                margin: auto
         .form
             display: grid
             grid-area: form
-            max-width: 1280px
+            max-width: $mediaMaxWidth
             grid-template-areas:  'name email phone' 'message message message'
             grid-gap: 10px
             .item
@@ -748,8 +810,8 @@
                 font-family: Inter, sans-serif
                 font-style: normal
                 font-weight: normal
-                font-size: 14px
-                line-height: 19px             
+                font-size: 1rem
+                line-height: 1.25rem             
                 height: 60px
                 color: #333333ff
                 background-color: #E5E5E5
@@ -760,22 +822,23 @@
                     border: 2px solid #E8C300
             .name
                 grid-area: name
-                max-width: 420px
+                max-width: $mediaMaxWidth/3
             .email
                 grid-area: email
-                max-width: 420px
+                max-width: $mediaMaxWidth/3
             .phone
                 grid-area: phone
-                max-width: 420px
+                max-width: $mediaMaxWidth/3
             .message
-                max-width: 1280px
+                max-width: $mediaMaxWidth
                 height: 120px
                 resize: none
                 padding-top: 10px
                 grid-area: message
         .info
+            margin-top: 10px
             grid-area: info
-            width: 630px
+            width: $mediaMaxWidth/2
             height: 60px
             color: rgb(153,153,153)
             text-align: center
@@ -789,14 +852,14 @@
             i   
                 color: #E8C300
         .btn
-            margin-right: 10px
+            margin-top: 10px
             box-sizing: border-box
             grid-area: btn
-            width: 630px
+            width: $mediaMaxWidth/2
             height: 60px
             border-radius: 5px
             color: white
-            font-family: Inter
+            font-family: Inter, sans-serif
             font-weight: 700
             text-transform: uppercase
             vertical-align: middle
@@ -831,3 +894,5 @@
             font-family: Inter, sans-serif
             color: rgba(255, 255, 255, 0.5)
 
+     
+ 
