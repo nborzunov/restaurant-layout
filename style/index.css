@@ -167,7 +167,6 @@
 .aboutBox .content .text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: text;
   margin: auto;
   max-width: 630px;
@@ -304,7 +303,6 @@
 .chefBox .content .text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: text;
   margin: auto;
   max-width: 630px;
@@ -518,11 +516,10 @@
 
 .specialtyBox .content {
   max-width: 1260px;
+  margin: auto;
   display: -ms-grid;
   display: grid;
-  width: auto;
       grid-template-areas: 'label' 'slider';
-  margin: auto;
 }
 
 .specialtyBox .content .label {
@@ -543,6 +540,7 @@
   -ms-grid-column: 1;
   grid-area: slider;
   max-width: 1260px;
+  margin: auto;
   margin-bottom: 20px;
 }
 
@@ -612,7 +610,7 @@
       grid-template-areas: 'pic text';
   outline: none;
   max-width: 1260px;
-  width: auto;
+  margin: auto;
 }
 
 @media screen and (max-width: 1260px) {
@@ -644,7 +642,6 @@
 .specialtyBox .content .slider .slider_item .text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: text;
   margin: auto;
   max-width: 630px;
@@ -719,7 +716,6 @@
 .menuBox .content .text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: text;
   margin: auto;
   max-width: 630px;
@@ -828,9 +824,6 @@
 
 .menuBox .content .wrapper .tabs .nav li:nth-child(7) {
   border-right: none;
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: 3/2/3/2;
 }
 
 .menuBox .content .wrapper .tabs .nav li.active {
@@ -858,6 +851,9 @@
     border-right: 2px solid rgba(80, 80, 80, 0.2);
   }
   .menuBox .content .wrapper .tabs .nav li:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: 3/2/3/2;
     border-left: 2px solid rgba(80, 80, 80, 0.2);
     border-right: 2px solid rgba(80, 80, 80, 0.2);
   }
@@ -969,21 +965,29 @@
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: images;
-  margin-left: 80px;
+  margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'left right';
+  margin: auto;
+  grid-gap: 80px;
+}
+
+@media screen and (max-width: 1100px) {
+  .privateBox .content .images {
+        grid-template-areas: 'left' 'right';
+  }
 }
 
 .privateBox .content .images .left {
-  width: 475px;
-  height: 475px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left;
 }
 
 .privateBox .content .images .left .image {
-  width: 100%;
-  height: 100%;
+  width: 475px;
+  height: 475px;
   background: url(../images/private_1.webp) no-repeat;
   -webkit-filter: drop-shadow(0px 0px 50px #000000);
           filter: drop-shadow(0px 0px 50px #000000);
@@ -994,11 +998,10 @@
 .privateBox .content .images .left .image .text {
   background-color: black;
   position: absolute;
-  width: 476px;
+  width: 477px;
   height: 80px;
-  left: 42%;
-  top: 41.5%;
-  font-family: Banny;
+  top: 84%;
+  font-family: Banny, sans-serif;
   font-size: 2rem;
   line-height: 12px;
   display: -webkit-box;
@@ -1009,13 +1012,25 @@
           align-items: center;
   text-indent: 20px;
   text-transform: uppercase;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+@media screen and (min-width: 1100px) {
+  .privateBox .content .images .left .image .text {
+    border-radius: 5px 5px 0 0;
+    left: 42%;
+    top: 41.5%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
 }
 
 .privateBox .content .images .right {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
   width: 475px;
   height: 475px;
 }
@@ -1035,9 +1050,7 @@
   position: absolute;
   width: 476px;
   height: 80px;
-  right: 42%;
-  top: 41.5%;
-  font-family: Banny;
+  font-family: Banny, sans-serif;
   font-size: 2rem;
   line-height: 12px;
   display: -webkit-box;
@@ -1048,15 +1061,22 @@
           align-items: center;
   text-indent: 20px;
   text-transform: uppercase;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+@media screen and (min-width: 1100px) {
+  .privateBox .content .images .right .image .text {
+    border-radius: 5px 5px 0 0;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    right: 42%;
+    top: 41.5%;
+  }
 }
 
 .privateBox .content .info {
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: info;
@@ -1125,37 +1145,36 @@
   max-width: 1260px;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'text text' 'form form' 'info btn';
-  margin: 0 auto;
-  padding-bottom: 80px;
+  margin: auto;
+  padding-bottom: 5vh;
 }
 
 .contactBox .content .text {
-  -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: text;
+  grid-column: 1/3;
   margin: auto;
-  max-width: 600px;
-  margin-top: 120px;
-  margin-bottom: 40px;
+  max-width: 630px;
+  margin-bottom: 5vh;
 }
 
 .contactBox .content .text .header {
-  font-family: Bold-Banny, sans-serif;
+  color: black;
   font-size: 2.5rem;
   line-height: 3rem;
+  font-family: Bold-Banny, sans-serif;
+  margin-top: 10vh;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
 }
 
 .contactBox .content .text .line {
-  background: #E8C300;
+  background: #e8c300;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px auto;
+  margin: 15px auto;
   width: 64px;
   height: 5px;
   border-radius: 20px;
@@ -1176,25 +1195,22 @@
           align-items: flex-end;
   text-align: center;
   margin: auto;
+  padding: 0 5px;
 }
 
 .contactBox .content .form {
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: form;
-  max-width: 1260px;
-      grid-template-areas: 'name email phone' 'message message message';
+  grid-column: 1/3;
   grid-gap: 10px;
+  margin: 10px;
 }
 
 .contactBox .content .form .item {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding-left: 20px;
-  border: none;
+  border: 2px solid rgba(0, 0, 0, 0);
   font-family: Inter, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1215,41 +1231,82 @@
 .contactBox .content .form .name {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: name;
-  max-width: 420px;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/1/2;
+}
+
+@media screen and (max-width: 800px) {
+  .contactBox .content .form .name {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 1/1/2/4;
+  }
 }
 
 .contactBox .content .form .email {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: email;
-  max-width: 420px;
+  -ms-grid-column-span: 1;
+  grid-area: 1/2/1/3;
+}
+
+@media screen and (max-width: 800px) {
+  .contactBox .content .form .email {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 2/1/3/4;
+  }
 }
 
 .contactBox .content .form .phone {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: phone;
-  max-width: 420px;
+  -ms-grid-column-span: 1;
+  grid-area: 1/3/1/4;
+}
+
+@media screen and (max-width: 800px) {
+  .contactBox .content .form .phone {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 3/1/4/4;
+  }
 }
 
 .contactBox .content .form .message {
-  max-width: 1260px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 2/1/3/4;
   height: 120px;
   resize: none;
   padding-top: 10px;
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: message;
+}
+
+@media screen and (max-width: 800px) {
+  .contactBox .content .form .message {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: 4/1/5/4;
+  }
 }
 
 .contactBox .content .info {
-  margin-top: 10px;
-  -ms-grid-row: 3;
   -ms-grid-column: 1;
-  grid-area: info;
-  width: 630px;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  margin-top: 10px;
+  margin-left: 10px;
+  max-width: 630px;
   height: 60px;
   color: #999999;
   text-align: center;
@@ -1270,17 +1327,31 @@
   color: #E8C300;
 }
 
+@media screen and (max-width: 800px) {
+  .contactBox .content .info {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    margin: auto;
+  }
+}
+
 .contactBox .content .btn {
-  margin-top: 10px;
+  margin: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -ms-grid-row: 3;
   -ms-grid-column: 2;
-  grid-area: btn;
-  width: 630px;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  max-width: 1260px;
+  width: auto;
   height: 60px;
   border-radius: 5px;
   color: white;
+  padding: 0 20px;
   font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -1297,6 +1368,14 @@
   border: 2px solid gray;
   background: #E5E5E5;
   color: black;
+}
+
+@media screen and (max-width: 800px) {
+  .contactBox .content .btn {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
 }
 
 .mapBox .map {
