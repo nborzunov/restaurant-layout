@@ -520,9 +520,12 @@
   display: -ms-grid;
   display: grid;
       grid-template-areas: 'label' 'slider';
+  width: auto;
 }
 
 .specialtyBox .content .label {
+  width: 300px;
+  margin: auto;
   color: rgba(255, 255, 255, 0.9);
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -540,8 +543,17 @@
   -ms-grid-column: 1;
   grid-area: slider;
   max-width: 1260px;
+  width: 100vw;
   margin: auto;
   margin-bottom: 20px;
+}
+
+.specialtyBox .content .slider .slick-list {
+  width: auto;
+}
+
+.specialtyBox .content .slider .slick-list .slick-track {
+  width: auto;
 }
 
 .specialtyBox .content .slider .slick-dots {
@@ -610,7 +622,7 @@
       grid-template-areas: 'pic text';
   outline: none;
   max-width: 1260px;
-  margin: auto;
+  margin: 0;
 }
 
 @media screen and (max-width: 1260px) {
@@ -644,6 +656,7 @@
   -ms-grid-column: 1;
   grid-area: text;
   margin: auto;
+  padding: 10px;
   max-width: 630px;
 }
 
@@ -697,7 +710,7 @@
   display: flex;
   margin: auto;
   padding: 0 30px;
-  margin-bottom: 10vh;
+  margin-bottom: 3vh;
   font-family: Open-Sans, sans-serif;
 }
 
@@ -970,7 +983,7 @@
   display: grid;
       grid-template-areas: 'left right';
   margin: auto;
-  grid-gap: 80px;
+  grid-gap: 8vh;
 }
 
 @media screen and (max-width: 1100px) {
@@ -983,22 +996,23 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: left;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 10px;
 }
 
 .privateBox .content .images .left .image {
-  width: 475px;
-  height: 475px;
-  background: url(../images/private_1.webp) no-repeat;
   -webkit-filter: drop-shadow(0px 0px 50px #000000);
           filter: drop-shadow(0px 0px 50px #000000);
   border-radius: 5px;
-  position: relative;
 }
 
-.privateBox .content .images .left .image .text {
+.privateBox .content .images .left .text {
   background-color: black;
   position: absolute;
-  width: 477px;
+  max-width: 477px;
+  width: 100%;
   height: 80px;
   top: 84%;
   font-family: Banny, sans-serif;
@@ -1018,7 +1032,7 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .privateBox .content .images .left .image .text {
+  .privateBox .content .images .left .text {
     border-radius: 5px 5px 0 0;
     left: 42%;
     top: 41.5%;
@@ -1031,24 +1045,24 @@
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: right;
-  width: 475px;
-  height: 475px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 10px;
 }
 
 .privateBox .content .images .right .image {
-  background: url(../images/private_2.webp) no-repeat;
-  width: 100%;
-  height: 100%;
   -webkit-filter: drop-shadow(0px 0px 50px #000000);
           filter: drop-shadow(0px 0px 50px #000000);
   border-radius: 5px;
-  position: relative;
 }
 
-.privateBox .content .images .right .image .text {
+.privateBox .content .images .right .text {
+  z-index: 10;
   background-color: black;
   position: absolute;
-  width: 476px;
+  max-width: 477px;
+  width: 100%;
   height: 80px;
   font-family: Banny, sans-serif;
   font-size: 2rem;
@@ -1065,18 +1079,18 @@
 }
 
 @media screen and (min-width: 1100px) {
-  .privateBox .content .images .right .image .text {
+  .privateBox .content .images .right .text {
     border-radius: 5px 5px 0 0;
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
-    right: 42%;
+    right: 45%;
     top: 41.5%;
   }
 }
 
 .privateBox .content .info {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
+  padding: 0 10px;
+  margin: 8vh auto 5vh auto;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: info;
@@ -1100,9 +1114,10 @@
 .photoBox .content .arrows .arrow {
   opacity: 0.8;
   border: none;
-  background-color: rgba(80, 80, 80, 0.5);
-  color: rgba(0, 0, 0, 0.8);
-  width: 4rem;
+  background-color: rgba(80, 80, 80, 0);
+  color: rgba(255, 255, 255, 0.8);
+  width: 20vw;
+  max-width: 4rem;
   height: 100%;
   position: absolute;
   -webkit-transform: translateY(-50%);
@@ -1116,8 +1131,8 @@
           align-items: center;
   font-size: 4rem;
   outline: none;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .photoBox .content .arrows .arrow i {
@@ -1129,6 +1144,7 @@
 
 .photoBox .content .arrows .arrow:hover {
   opacity: 0.99;
+  background-color: rgba(80, 80, 80, 0.2);
 }
 
 .photoBox .content .arrows .prev {

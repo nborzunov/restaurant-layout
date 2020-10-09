@@ -1,4 +1,4 @@
-/* Slider */
+Slider */
 .slick-slider {
   position: relative;
   display: block;
@@ -44,7 +44,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+} 
 
 .slick-track:before, .slick-track:after {
   content: "";
@@ -99,4 +99,4 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
-/*# sourceMappingURL=slick.css.map */
+/*# sourceMappingURL=slick.css.map
