@@ -14,15 +14,19 @@
   background-size: cover;
   display: -ms-grid;
   display: grid;
-  height: auto;
+  height: 100vh;
 }
 
 .headerBox .navbar {
   display: inherit;
-  -ms-grid-columns: (1fr)[4] 200px (1fr)[4];
-      grid-template-columns: repeat(4, 1fr) 200px repeat(4, 1fr);
-  margin: 0 100px;
-  height: 300px;
+  -ms-grid-columns: (minmax(120px, 1fr))[4] 200px (minmax(120px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(120px, 1fr)) 200px repeat(4, minmax(120px, 1fr));
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: fixed;
+  z-index: 100;
 }
 
 .headerBox .navbar .item {
@@ -71,6 +75,7 @@
 
 .headerBox .content {
   text-align: center;
+  margin-top: 30vh;
 }
 
 .headerBox .content .label {
@@ -113,7 +118,7 @@
   border-radius: 5px;
   color: white;
   margin: 0 30px;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   vertical-align: middle;
