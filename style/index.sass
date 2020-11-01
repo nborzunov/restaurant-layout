@@ -167,6 +167,8 @@ $headerLH: 3rem
             color: white
             font-family: Banny, sans-serif
             font-size: 7em
+            @media screen and (max-width: $mediaMidWidth)
+                font-size: 3em
         .line
             background: #E8C300
             display: flex
@@ -183,7 +185,7 @@ $headerLH: 3rem
                 height: 60px
                 border-radius: 5px
                 color: white
-                margin: 0 30px
+                margin-bottom: 20px
                 font-family: Inter, sans-serif
                 font-weight: 700
                 text-transform: uppercase
@@ -195,14 +197,17 @@ $headerLH: 3rem
                 transition-duration: 0.3s
                 -webkit-transition-property: transform
                 transition-property: transform
+
                 &:hover
                     transform: scale(1.05)
             .book
                 background: #E8C300
                 border: 1px solid #E8C300
+                margin-right: 20px
             .explore
                 background: #0000
                 border: 2px solid gray
+                margin-right: 20px
 // About Us
 .aboutBox
     height: auto
@@ -760,7 +765,6 @@ $headerLH: 3rem
                 position: relative
                 margin: auto
                 .image
-                    filter: drop-shadow(0px 0px 50px #000000)
                     border-radius: 5px
                 .text
                     background-color: black
@@ -792,7 +796,6 @@ $headerLH: 3rem
                 position: relative
                 margin: 10px
                 .image
-                    filter: drop-shadow(0px 0px 50px #000000)
                     border-radius: 5px
                 .text
                     z-index: 10

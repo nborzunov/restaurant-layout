@@ -200,6 +200,12 @@
   font-size: 7em;
 }
 
+@media screen and (max-width: 960px) {
+  .headerBox .content .header {
+    font-size: 3em;
+  }
+}
+
 .headerBox .content .line {
   background: #E8C300;
   display: -webkit-box;
@@ -222,7 +228,7 @@
   height: 60px;
   border-radius: 5px;
   color: white;
-  margin: 0 30px;
+  margin-bottom: 20px;
   font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -248,11 +254,13 @@
 .headerBox .content .buttons .book {
   background: #E8C300;
   border: 1px solid #E8C300;
+  margin-right: 20px;
 }
 
 .headerBox .content .buttons .explore {
   background: #0000;
   border: 2px solid gray;
+  margin-right: 20px;
 }
 
 .aboutBox {
@@ -1114,8 +1122,6 @@
 }
 
 .privateBox .content .images .left .image {
-  -webkit-filter: drop-shadow(0px 0px 50px #000000);
-          filter: drop-shadow(0px 0px 50px #000000);
   border-radius: 5px;
 }
 
@@ -1164,8 +1170,6 @@
 }
 
 .privateBox .content .images .right .image {
-  -webkit-filter: drop-shadow(0px 0px 50px #000000);
-          filter: drop-shadow(0px 0px 50px #000000);
   border-radius: 5px;
 }
 
