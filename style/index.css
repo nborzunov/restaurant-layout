@@ -101,6 +101,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 80px;
 }
 
 .headerBox .navbar .mobile .header .container {
@@ -133,6 +134,7 @@
 }
 
 .headerBox .navbar .mobile .header .label {
+  margin: auto 0;
   color: white;
   font-size: 2em;
   line-height: 3rem;
@@ -156,8 +158,6 @@
 }
 
 .headerBox .navbar .mobile .active .item {
-  color: white;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   max-height: 100px;
   width: 60vw;
   text-align: center;
@@ -166,7 +166,7 @@
   font-size: 1.25em;
   line-height: 1em;
   text-transform: uppercase;
-  height: 40px;
+  height: 70px;
   background-color: rgba(80, 80, 80, 0.8);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -174,9 +174,9 @@
 
 .headerBox .navbar .mobile .active .item a {
   display: block;
-  padding: 10px 0;
   text-decoration: none;
   color: #fff;
+  padding: 20px;
 }
 
 .headerBox .content {
@@ -230,6 +230,7 @@
   border-radius: 5px;
   color: white;
   margin-bottom: 20px;
+  margin-right: 20px;
   font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -247,6 +248,12 @@
   transition-property: transform, -webkit-transform;
 }
 
+@media screen and (max-width: 960px) {
+  .headerBox .content .buttons .btn {
+    margin-right: 0;
+  }
+}
+
 .headerBox .content .buttons .btn:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -255,13 +262,11 @@
 .headerBox .content .buttons .book {
   background: #E8C300;
   border: 1px solid #E8C300;
-  margin-right: 20px;
 }
 
 .headerBox .content .buttons .explore {
   background: #0000;
   border: 2px solid gray;
-  margin-right: 20px;
 }
 
 .aboutBox {
