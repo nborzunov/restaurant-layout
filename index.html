@@ -20,7 +20,7 @@
         <nav class='navbar' id='navbar'>
             <ul class='mobile'>
                 <ul class='header'>
-                    <div class="container" id='container' onclick="toggleMenu(this)">
+                    <div class="container" id='mobileContainer' onclick="toggleMenu(this)">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
@@ -34,7 +34,7 @@
                     </script>
                     <div class='label'>Hunger People</div>
                 </ul>
-                <ul class='menu' id='menu'>
+                <ul class='menu' id='mobileMenu'>
                     <li class='item'><a href="#header">Home</a></li>
                     <li class='item'><a href="#about">About</a></li>
                     <li class='item'><a href="#team">Team</a></li>
@@ -44,10 +44,9 @@
                     <li class='item'><a href="#events">Events</a></li>
                     <li class='item'><a href="#contacts">Contacts</a></li>
                 </ul>
-
             </ul>
             <ul class='desktop'>
-                <ul class='menu'>
+                <ul class='menu' id='menubar'>
                     <li class='item'><a href="">Home</a></li>
                     <li class='item'><a href="">About</a></li>
                     <li class='item'><a href="">Team</a></li>
@@ -68,7 +67,33 @@
                     <li class='item'><a href="">Events</a></li>
                     <li class='item'><a href="">Contacts</a></li>
                 </ul>
-                
+                <ul class='sidebar none' id='sidebar'>
+                    <ul class='header'>
+                        <div class="container" id='desktopContainer' onclick="toggleMenu(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                        <div class='label'>Hunger People</div>
+                    </ul>
+                    <ul class='menu' id='desktopMenu'>
+                        <li class='item'><a href="#header">Home</a></li>
+                        <li class='item'><a href="#about">About</a></li>
+                        <li class='item'><a href="#team">Team</a></li>
+                        <li class='item'><a href="#booking">Booking</a></li>
+                        <li class='item'><a href="#menu">Menu</a></li>
+                        <li class='item'><a href="#galerie">Galerie</a></li>
+                        <li class='item'><a href="#events">Events</a></li>
+                        <li class='item'><a href="#contacts">Contacts</a></li>
+                    </ul>
+                    <script>
+                        function toggleMenu(container) {
+                          container.classList.toggle("change");
+                          var menu = document.getElementById('desktopMenu');
+                          menu.classList.toggle('active')
+                        }
+                    </script>
+                </ul>
             </ul>
         </nav>
         <div class='content'>
