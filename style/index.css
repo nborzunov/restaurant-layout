@@ -24,20 +24,26 @@
 .headerBox .navbar {
   top: 0;
   position: fixed;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   -webkit-transition: top 0.4s;
   transition: top 0.4s;
   z-index: 1000;
-  width: 100vw;
 }
 
 .headerBox .navbar .desktop {
-  padding: 0;
   z-index: 100;
-  max-width: 100vw;
-  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media screen and (max-width: 960px) {
@@ -46,21 +52,23 @@
   }
 }
 
-.headerBox .navbar .desktop .menu {
-  width: 80vw;
-  margin: auto;
+.headerBox .navbar .desktop .menubar {
   max-height: 200px;
+  position: fixed;
+  top: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(100px, 140px))[4] 200px (minmax(100px, 140px))[4];
       grid-template-columns: repeat(4, minmax(100px, 140px)) 200px repeat(4, minmax(100px, 140px));
 }
 
-.headerBox .navbar .desktop .menu li {
+.headerBox .navbar .desktop .menubar li {
   list-style-type: none;
 }
 
-.headerBox .navbar .desktop .menu .item {
+.headerBox .navbar .desktop .menubar .item {
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   max-height: 100px;
   width: 100%;
@@ -72,29 +80,33 @@
   text-transform: uppercase;
 }
 
-.headerBox .navbar .desktop .menu .item:hover {
+.headerBox .navbar .desktop .menubar .item:hover {
   background-color: #E8C300;
 }
 
-.headerBox .navbar .desktop .menu .item a {
+.headerBox .navbar .desktop .menubar .item a {
   display: block;
   padding: 41px 0;
   text-decoration: none;
   color: #fff;
 }
 
-.headerBox .navbar .desktop .menu .logo {
+.headerBox .navbar .desktop .menubar .logo {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  text-align: center;
   margin-top: 20px;
-  margin: 20px auto;
   border-radius: 60px;
 }
 
 .headerBox .navbar .desktop .sidebar {
   width: 100vw;
+  position: fixed;
+  top: -200px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .headerBox .navbar .desktop .sidebar .header {
@@ -108,6 +120,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 80px;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .headerBox .navbar .desktop .sidebar .header .container {
@@ -148,7 +163,7 @@
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
 .headerBox .navbar .desktop .sidebar .menu {
@@ -177,7 +192,7 @@
   line-height: 1em;
   text-transform: uppercase;
   width: 200px;
-  background-color: rgba(80, 80, 80, 0.8);
+  background-color: rgba(80, 80, 80, 0.5);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
@@ -347,6 +362,7 @@
   color: white;
   margin-bottom: 20px;
   margin-right: 20px;
+  margin-left: 20px;
   font-family: Inter, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -364,9 +380,10 @@
   transition-property: transform, -webkit-transform;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 400px) {
   .headerBox .content .buttons .btn {
     margin-right: 0;
+    margin-left: 0;
   }
 }
 
