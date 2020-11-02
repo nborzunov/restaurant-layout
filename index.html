@@ -20,18 +20,12 @@
         <nav class='navbar' id='navbar'>
             <ul class='mobile'>
                 <ul class='header'>
-                    <div class="container" id='mobileContainer' onclick="toggleMenu(this)">
+                    <div class="container" id='mobileContainer' onclick="toggleMobileMenu(this)">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </div>
-                    <script>
-                        function toggleMenu(container) {
-                          container.classList.toggle("change");
-                          var menu = document.getElementById('menu');
-                          menu.classList.toggle('active')
-                        }
-                    </script>
+
                     <div class='label'>Hunger People</div>
                 </ul>
                 <ul class='menu' id='mobileMenu'>
@@ -44,6 +38,13 @@
                     <li class='item'><a href="#events">Events</a></li>
                     <li class='item'><a href="#contacts">Contacts</a></li>
                 </ul>
+                <script>
+                    function toggleMobileMenu(container) {
+                      container.classList.toggle("change");
+                      var menu = document.getElementById('mobileMenu');
+                      menu.classList.toggle('active')
+                    }
+                </script>
             </ul>
             <ul class='desktop'>
                 <ul class='menu' id='menubar'>
@@ -69,7 +70,7 @@
                 </ul>
                 <ul class='sidebar none' id='sidebar'>
                     <ul class='header'>
-                        <div class="container" id='desktopContainer' onclick="toggleMenu(this)">
+                        <div class="container" id='desktopContainer' onclick="toggleDesktopMenu(this)">
                             <div class="bar1"></div>
                             <div class="bar2"></div>
                             <div class="bar3"></div>
@@ -87,7 +88,7 @@
                         <li class='item'><a href="#contacts">Contacts</a></li>
                     </ul>
                     <script>
-                        function toggleMenu(container) {
+                        function toggleDesktopMenu(container) {
                           container.classList.toggle("change");
                           var menu = document.getElementById('desktopMenu');
                           menu.classList.toggle('active')
